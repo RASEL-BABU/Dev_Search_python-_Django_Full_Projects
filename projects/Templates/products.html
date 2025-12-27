@@ -1,8 +1,26 @@
 
 {% extends "main.html"%}
 {%block content%}
-<h1> Hey is there any producst</h1>
+
  <h1>This is a main content page</h1>
+ <P>{{msg}}</P>
+
+ {% if number > 10 %}
+ <p>Number is greater than ten</p>
+ {% else %}
+ <p>Number is Less than ten</p>
+
+ {%endif%}
+
+ <ul>
+    {% for product in projects %}
+    <li>Name:<a href="/project/{{product.id}}">{{product.title}}</a>{{product.description}} </li>
+
+
+
+    {%endfor%}
+ </ul>
+
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore earum dolores, architecto cumque neque necessitatibus iste perferendis laborum facere. Iure, illo. Delectus ducimus 
     accusantium doloribus officiis obcaecati numquam? Quibusdam, distinctio?</p>
 {%endblock content%}

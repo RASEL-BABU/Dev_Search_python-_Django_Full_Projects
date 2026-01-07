@@ -2,6 +2,14 @@
 {% extends "main.html"%}
 {%block content%}
 <h1>Single Product here</h1>
-<h1>{{projectObj.title}}</h1>
+<h1>{{project.title}}</h1>
+
+<hr>
+{% for tag in tags %}
+<span style=" border:1px solid red"> {{tag}}</span>
+
+
+{% endfor %}
+<hr>
 <p>{{project.description}}</p>
 {%endblock content%}

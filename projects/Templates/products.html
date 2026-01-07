@@ -12,9 +12,36 @@
 
  {%endif%}
 
+ <table>
+    
+        <tr>
+            <th>ID</th>
+            <th>Project</th>
+            <th>Votes</th>
+            <th>Ratio</th>
+            <th>Date</th>
+            <th>Details Click</th>
+
+            {% for product in projects %}
+
+            <tr>
+                 <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.vote_total}}</td>
+                <td>{{product.vote_ratio}}</td>
+                  <td>{{product.created}}</td>
+               <td> <a href="/project/{{product.id}}">View</a></td>
+                
+            </tr>
+            {% endfor%}
+           
+        </tr>
+ 
+ </table>
+
  <ul>
     {% for product in projects %}
-    <li>Name:<a href="/project/{{product.id}}">{{product.title}}</a>{{product.description}} </li>
+    <li>Name:<a href="/project/{{product.id}}">{{product.title}}</a> </li>
 
 
 
